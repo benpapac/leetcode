@@ -4,6 +4,9 @@
  * @return {boolean}
  */
 
+// Challenge #567 - Permutation in String
+//https://leetcode.com/problems/permutation-in-string/
+
 // This algorithm relies on a "sliding window" solution. See:
 // https://www.youtube.com/watch?v=6gRj_FH3MsA
 //  https://stackoverflow.com/questions/8269916/what-is-sliding-window-algorithm-examples
