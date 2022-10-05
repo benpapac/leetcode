@@ -1,0 +1,32 @@
+/**
+ * @param {number[][]} mat
+ * @param {number} r
+ * @param {number} c
+ * @return {number[][]}
+ */
+
+// see: https://www.youtube.com/watch?v=wCdNh9oThqk
+var matrixReshape = function(mat, r, c) {
+    let rows = mat.length;
+    let cols = mat[0].length;
+    
+     if(rows*cols !== r*c) return mat;
+    
+    let result = Array.from({length: r}, i => []);
+    let rowLoc = 0;
+    let colLoc = 0;
+    
+    for(let i=0; i< rows; i++){
+        for(let j = 0; j < cols; j++){
+            result[rowLoc][colLoc] = mat[i][j];
+            colLoc += 1;
+            
+            if(colLoc === c){
+                colLoc = 0;
+                rowLoc += 1;
+            }
+        }
+    }
+    
+    return result;
+};
