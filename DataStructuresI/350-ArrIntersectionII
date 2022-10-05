@@ -1,0 +1,21 @@
+/**
+ * @param {number[]} nums1
+ * @param {number[]} nums2
+ * @return {number[]}
+ */
+var intersect = function(nums1, nums2) {
+    //Really cool solution I learned after reviewing.
+    // Take the larger array, defaulting to one of the arrays if their length is equal.
+    // Filter that array, eliminating all values that aren't contained in the other array, AND:
+        //splicing the matching value out of the other array.
+            // This extra step prevents matching against the same val twice.
+    
+   if(nums1.length > nums2.length) return nums1.filter(n => {
+       return nums2.includes(n) && nums2.splice(nums2.indexOf(n), 1);
+   })
+    
+    else return nums2.filter( n => {
+        return nums1.includes(n) && nums1.splice(nums1.indexOf(n), 1);
+    })
+
+};
